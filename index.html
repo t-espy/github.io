@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todd Espy Projects</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 2rem auto;
+            max-width: 1100px;
+            padding: 0 1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2 {
+            color: #1a1a1a;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        h2 {
+            margin-top: 2.5rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.25rem;
+        }
+
+        .layout {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .content {
+            flex: 3;
+        }
+
+        .sidebar {
+            flex: 1;
+            position: sticky;
+            top: 2rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-left: 1px solid #ddd;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 800px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: static;
+                margin-top: 2rem;
+                border-left: none;
+                border-top: 1px solid #ddd;
+            }
+        }
+
+        .banner {
+            background: url('./images/GitHubIOBanner.png') no-repeat center center;
+            background-size: cover;
+            padding: 4rem 1rem;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInSlideUp 1s ease-out both;
+        }
+
+        @keyframes fadeInSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .banner h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .banner p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-top: 0.5rem;
+        }
+
+        .project {
+            margin-bottom: 2rem;
+        }
+
+        .private {
+            font-style: italic;
+            color: #b00;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.95rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <main class="content">
+            <div class="banner">
+                <h1>Todd Espy</h1>
+                <p>Selected Work in AI & Machine Learning</p>
+            </div>
+
+            <p>
+                I'm a builder and problem-solver who focuses on delivering practical, production-ready solutions using
+                modern AI and machine learning tools.
+                What you’ll find here are examples of recent work in GPU-accelerated pipelines, financial modeling, and
+                real-time data applications.
+            </p>
+            <p>
+                Each project reflects a balance of clean architecture, computational efficiency, and real-world
+                applicability.
+            </p>
+
+            <div class="project">
+                <h2>
+                    <a class="contact-link" href="stock-price-predictor.html">📈 Stock Price Predictor – GPU-Accelerated
+                        Forecasting Pipeline</a>
+                </h2>
+                <p>
+                    Built as a high-performance experimentation and inference platform, the Stock Price Predictor
+                    enables end-to-end development of predictive models using 5-minute OHLCV data.
+                    It supports streamlined data ingestion, feature engineering, and GPU-accelerated training, with
+                    ensemble logic that merges both XGBoost and LSTM outputs.
+                </p>
+                <p>
+                    The platform integrates CuPy and TensorFlow for optimized resource use, and applies vectorbt-based
+                    backtesting to evaluate generated signals.
+                    Grid search runs on GPU to fine-tune hyperparameters with maximum efficiency.
+                </p>
+                <p>
+                    This workflow demonstrates production-quality ML engineering: modular code structure,
+                    performance-aware design, automated logging, and the integration of inference outputs into trading
+                    signal logic.
+                </p>
+                <p class="private">🔒 This project is in a private repository.</p>
+            </div>
+
+            <div class="project">
+                <h2>📊 Financial Dashboard</h2>
+                <p>
+                    An interactive, web-based dashboard for real-time portfolio monitoring and financial analysis.
+                    Built with Plotly Dash and integrated with broker APIs for live data feeds.
+                </p>
+                <p class="private">🔒 This project is in a private repository.</p>
+            </div>
+
+            <div class="project">
+                <h2>📦 Custom ML Inference API</h2>
+                <p>
+                    A scalable, production-ready REST API framework for serving ML models.
+                    Developed using FastAPI with JWT-based authentication, logging, and asynchronous inference support.
+                </p>
+                <p class="private">🔒 This project is in a private repository.</p>
+            </div>
+
+            <footer>
+                <p>More projects and demos coming soon.</p>
+            </footer>
+        </main>
+
+        <aside class="sidebar" id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out:</p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><strong>Email:</strong> <span id="email">[loading...]</span></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/toddespy/"
+                        target="_blank">linkedin.com/in/toddespy</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <script>
+        // Email obfuscation
+        window.addEventListener("DOMContentLoaded", function () {
+            const user = "todd.espy";
+            const domain = "gmail.com";
+            const email = `${user}@${domain}`;
+            const emailLink = `<a href="mailto:${email}">${email}</a>`;
+            document.getElementById("email").innerHTML = emailLink;
+        });
+    </script>
+</body>
+
+</html>
