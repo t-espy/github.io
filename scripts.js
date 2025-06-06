@@ -4,5 +4,19 @@ window.addEventListener("DOMContentLoaded", function () {
     const domain = "gmail.com";
     const email = `${user}@${domain}`;
     const emailLink = `<a href="mailto:${email}">${email}</a>`;
-    document.getElementById("email").innerHTML = emailLink;
+    const emailSpan = document.getElementById("email");
+    if (emailSpan) emailSpan.innerHTML = emailLink;
+});
+
+// Sidebar injection
+window.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("sidebar-container");
+    if (container) {
+        fetch("sidebar.html")
+            .then(res => res.text())
+            .then(html => {
+                container.innerHTML = html;
+            })
+            .catch(err => console.error("Sidebar load failed:", err));
+    }
 });
