@@ -19,7 +19,7 @@ A deep learning model using LSTM to forecast stock prices based on OHLCV time se
 ### 📊 Financial Dashboard  
 An interactive dashboard for real-time portfolio tracking, performance analytics, and financial metrics visualization.  
 🔒 *This project is in a private repository.*  
-👉 [Request access](mailto:todd.espy@gmail.com?subject=Request%20Access%20to%20Financial%20Dashboard%20Repo)
+👉 [Request access](👉 [Request access via email](mailto:todd.espy@gmail.com?subject=Request%20Access%20to%20Stock%20Price%20Predictor%20Repo)
 
 ---
 
