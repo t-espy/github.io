@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("sidebar-container");
     if (container) {
-        fetch("sidebar.html")
+        fetch("./sidebar.html")
             .then(res => res.text())
             .then(html => {
                 container.innerHTML = html;
