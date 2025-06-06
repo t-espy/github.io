@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Demo – Todd Espy</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 2rem auto;
+            max-width: 800px;
+            padding: 0 1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #1a1a1a;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            margin-top: 1.5rem;
+        }
+
+        .private {
+            font-style: italic;
+            color: #b00;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        pre {
+            background: #f8f8f8;
+            padding: 0.5rem;
+            overflow-x: auto;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.95rem;
+            color: #777;
+        }
+
+        @keyframes fadeInSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .banner {
+            background: url('./images/GitHubIOBanner.png') no-repeat center center;
+            background-size: cover;
+            padding: 4rem 1rem;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInSlideUp 1s ease-out both;
+        }
+
+        .banner h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <h1>RAG Document QA – Full Stack Bedrock Integration</h1>
+    </div>
+
+    <p>
+        This project is a full-stack demo of Retrieval-Augmented Generation (RAG) powered by a modern development stack:
+        <strong>Python + FastAPI</strong> for the API layer, <strong>React + Vite</strong> for the frontend,
+        and <strong>Amazon Bedrock</strong> (Titan models) for both embeddings and text generation.
+    </p>
+
+    <p>
+        Document ingestion, chunking, and indexing are performed locally via scripts that process files placed in the
+        <code>datastore/</code> directory and build a GPU-accelerated FAISS index using Bedrock embeddings.
+        The resulting index is used to serve real-time document QA via REST APIs, with the entire stack deployable
+        either locally or in the cloud.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li><strong>End-to-End Stack:</strong> Full RAG pipeline combining frontend, backend, embedding, retrieval, and
+            generation layers</li>
+        <li><strong>Modern UI:</strong> Built with React + Vite for fast dev cycles and responsive interaction</li>
+        <li><strong>API Layer:</strong> FastAPI handles query routing, vector retrieval, and prompt orchestration with
+            Bedrock</li>
+        <li><strong>Document Processing:</strong> Scripts extract, chunk, and embed documents from
+            <code>datastore/</code>
+        </li>
+        <li><strong>FAISS Index:</strong> Local GPU-accelerated semantic search using FAISS (flat or HNSW)</li>
+        <li><strong>Amazon Bedrock:</strong> Titan Embeddings and Titan Text models used for inference (can be swapped)
+        </li>
+    </ul>
+
+    <h2>Deployment Options</h2>
+    <ul>
+        <li><strong>Docker Local Dev:</strong> Run the full stack locally with Docker Compose</li>
+        <li><strong>AWS Deployment:</strong> Deploy via manual scripts or CloudFormation template</li>
+        <li><strong>API-UI Integration:</strong> Deployed frontend calls live Bedrock-powered API to serve answers from
+            uploaded documents</li>
+    </ul>
+
+    <h2>Technologies & Skills Demonstrated</h2>
+    <ul>
+        <li>Retrieval-Augmented Generation with FAISS and Bedrock Titan models</li>
+        <li>API development with FastAPI, LangChain, and Pydantic</li>
+        <li>Frontend engineering with React, Vite, and Tailwind CSS (optional)</li>
+        <li>Docker-based dev and deployment workflows</li>
+        <li>AWS cloud infrastructure and serverless orchestration</li>
+        <li>Prompt engineering and semantic chunk retrieval</li>
+    </ul>
+
+    <p>
+        <strong>Repository (Private):</strong>
+        <a href="https://github.com/t-espy/resume-rag-demo" target="_blank">
+            github.com/t-espy/resume-rag-demo
+        </a>
+        <br>
+        <a href="https://www.linkedin.com/in/toddespy/" target="_blank">Message me on LinkedIn for
+            access.</a>
+    </p>
+
+    <footer>
+        <p><a href="index.html">← Back to main portfolio</a></p>
+    </footer>
+</body>
+
+</html>
