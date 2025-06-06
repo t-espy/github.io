@@ -5,147 +5,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stock Price Predictor – Todd Espy</title>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            margin: 2rem auto;
-            max-width: 800px;
-            padding: 0 1rem;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: #1a1a1a;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        h3 {
-            margin-top: 1.5rem;
-        }
-
-        .private {
-            font-style: italic;
-            color: #b00;
-        }
-
-        .contact-link {
-            display: inline-block;
-            margin-top: 0.5rem;
-            text-decoration: none;
-            color: #0066cc;
-        }
-
-        .contact-link:hover {
-            text-decoration: underline;
-        }
-
-        pre {
-            background: #f8f8f8;
-            padding: 0.5rem;
-            overflow-x: auto;
-        }
-
-        footer {
-            margin-top: 3rem;
-            font-size: 0.95rem;
-            color: #777;
-        }
-
-        @keyframes fadeInSlideUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .banner {
-            background: url('./images/GitHubIOBanner.png') no-repeat center center;
-            background-size: cover;
-            padding: 4rem 1rem;
-            border-radius: 12px;
-            color: white;
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeInSlideUp 1s ease-out both;
-        }
-
-        .banner h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <div class="banner">
-        <h1>Stock Price Predictor</h1>
+    <div class="layout">
+        <main class="content">
+            <div class="banner">
+                <h1>Stock Price Predictor</h1>
+            </div>
+            <p><strong>StockPricePredictor</strong> is a complete, GPU-accelerated machine learning workflow designed to
+                build,
+                train, and evaluate stock price prediction models using high-frequency 5‑minute OHLCV data.</p>
+
+            <p>This project showcases end-to-end capabilities across:</p>
+            <ul>
+                <li>Data ingestion and preprocessing</li>
+                <li>Feature engineering and time-series transformation</li>
+                <li>Model training with GPU acceleration</li>
+                <li>Backtesting and strategy evaluation using <strong>vectorbt</strong></li>
+                <li>Automated hyperparameter tuning with GPU‑accelerated grid search</li>
+            </ul>
+
+            <h3>Key Highlights</h3>
+            <ul>
+                <li><strong>Ensemble Learning:</strong> Combines <strong>XGBoost</strong> and <strong>LSTM</strong>
+                    predictions
+                    for improved accuracy and robustness.</li>
+                <li><strong>GPU Optimization:</strong> Utilizes <strong>CuPy</strong>, <strong>XGBoost (GPU
+                        backend)</strong>,
+                    and <strong>TensorFlow</strong> with memory growth settings for efficient GPU use.</li>
+                <li><strong>Command-Line Tooling:</strong> Launch training with a single command:
+                    <pre><code>python -m src.models.train_model</code></pre>
+                </li>
+                <li><strong>Backtesting Integration:</strong> Employs <strong>vectorbt</strong> for signal-based
+                    strategy
+                    analysis using GPU outputs.</li>
+                <li><strong>Modular Design:</strong> Lazily loads TensorFlow through a helper module to minimize
+                    unnecessary
+                    overhead.</li>
+                <li><strong>Transparent Logging:</strong> Logs key training metadata, GPU usage, and ensemble
+                    diagnostics.</li>
+            </ul>
+
+            <h3>Technologies & Skills Demonstrated</h3>
+            <ul>
+                <li>Machine learning engineering with <strong>XGBoost</strong> and <strong>LSTM</strong></li>
+                <li>GPU-accelerated pipelines using <strong>TensorFlow</strong> and <strong>CuPy</strong></li>
+                <li>Time-series modeling for financial data</li>
+                <li>Backtesting with <strong>vectorbt</strong></li>
+                <li>Automated training pipelines and CLI tools</li>
+            </ul>
+
+            <!-- ... existing project details ... -->
+
+            <p>
+                <strong>Repository (Private):</strong>
+                <a href="https://github.com/t-espy/StockPricePredictor" target="_blank">
+                    github.com/t-espy/StockPricePredictor
+                </a>
+                <br>
+                <a href="https://www.linkedin.com/in/toddespy/" target="_blank">Message me on LinkedIn for
+                    access.</a>
+            </p>
+
+            <footer>
+                <p><a href="index.html">← Back to main portfolio</a></p>
+            </footer>
+        </main>
+
+        <aside class="sidebar" id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out:</p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><strong>Email:</strong> <span id="email">[loading...]</span></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/toddespy/"
+                        target="_blank">linkedin.com/in/toddespy</a></li>
+            </ul>
+        </aside>
     </div>
-    <p><strong>StockPricePredictor</strong> is a complete, GPU-accelerated machine learning workflow designed to build,
-        train, and evaluate stock price prediction models using high-frequency 5‑minute OHLCV data.</p>
 
-    <p>This project showcases end-to-end capabilities across:</p>
-    <ul>
-        <li>Data ingestion and preprocessing</li>
-        <li>Feature engineering and time-series transformation</li>
-        <li>Model training with GPU acceleration</li>
-        <li>Backtesting and strategy evaluation using <strong>vectorbt</strong></li>
-        <li>Automated hyperparameter tuning with GPU‑accelerated grid search</li>
-    </ul>
+    <script src="scripts.js"></script>
 
-    <h3>Key Highlights</h3>
-    <ul>
-        <li><strong>Ensemble Learning:</strong> Combines <strong>XGBoost</strong> and <strong>LSTM</strong> predictions
-            for improved accuracy and robustness.</li>
-        <li><strong>GPU Optimization:</strong> Utilizes <strong>CuPy</strong>, <strong>XGBoost (GPU backend)</strong>,
-            and <strong>TensorFlow</strong> with memory growth settings for efficient GPU use.</li>
-        <li><strong>Command-Line Tooling:</strong> Launch training with a single command:
-            <pre><code>python -m src.models.train_model</code></pre>
-        </li>
-        <li><strong>Backtesting Integration:</strong> Employs <strong>vectorbt</strong> for signal-based strategy
-            analysis using GPU outputs.</li>
-        <li><strong>Modular Design:</strong> Lazily loads TensorFlow through a helper module to minimize unnecessary
-            overhead.</li>
-        <li><strong>Transparent Logging:</strong> Logs key training metadata, GPU usage, and ensemble diagnostics.</li>
-    </ul>
-
-    <h3>Technologies & Skills Demonstrated</h3>
-    <ul>
-        <li>Machine learning engineering with <strong>XGBoost</strong> and <strong>LSTM</strong></li>
-        <li>GPU-accelerated pipelines using <strong>TensorFlow</strong> and <strong>CuPy</strong></li>
-        <li>Time-series modeling for financial data</li>
-        <li>Backtesting with <strong>vectorbt</strong></li>
-        <li>Automated training pipelines and CLI tools</li>
-    </ul>
-
-    <!-- ... existing project details ... -->
-
-    <p>
-        <strong>Repository (Private):</strong>
-        <a href="https://github.com/t-espy/StockPricePredictor" target="_blank">
-            github.com/t-espy/StockPricePredictor
-        </a>
-        <br>
-        <a href="https://www.linkedin.com/in/toddespy/" target="_blank">Message me on LinkedIn for
-            access.</a>
-    </p>
-
-    <footer>
-        <p><a href="index.html">← Back to main portfolio</a></p>
-    </footer>
 </body>
 
 </html>
