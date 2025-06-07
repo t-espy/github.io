@@ -1,125 +1,77 @@
 body {
-    font-family: system-ui, -apple-system, sans-serif;
-    margin: 2rem auto;
-    max-width: 1100px;
-    padding: 0 1rem;
-    color: #333;
+    margin: 0;
+    font-family: sans-serif;
     line-height: 1.6;
-}
-
-h1,
-h2 {
-    color: #1a1a1a;
-}
-
-h1 {
-    font-size: 2rem;
-    margin-bottom: 0.25rem;
-}
-
-h2 {
-    margin-top: 2.5rem;
-    font-size: 1.5rem;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 0.25rem;
+    background-color: #fff;
+    color: #333;
 }
 
 .layout {
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    gap: 3rem;
 }
 
-.content {
-    flex: 3;
+.main-column {
+    flex: 1;
+    min-width: 0;
 }
 
 .sidebar {
-    flex: 1;
-    position: sticky;
-    top: 2rem;
-    padding: 1rem;
+    width: 280px;
+    flex-shrink: 0;
     background-color: #f9f9f9;
-    border-left: 1px solid #ddd;
-    font-size: 0.95rem;
+    padding: 1rem;
+    border-left: 1px solid #ccc;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
 }
 
-@media (max-width: 800px) {
+#training-time-chart {
+    width: 100% !important;
+    height: 500px;
+}
+
+@media (max-width: 1024px) {
     .layout {
         flex-direction: column;
     }
 
     .sidebar {
-        position: static;
+        width: 100%;
         margin-top: 2rem;
         border-left: none;
-        border-top: 1px solid #ddd;
-    }
-}
-
-.banner {
-    background: url('./images/GitHubIOBanner.png') no-repeat center center;
-    background-size: cover;
-    padding: 4rem 1rem;
-    border-radius: 12px;
-    color: white;
-    text-align: center;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeInSlideUp 1s ease-out both;
-}
-
-@keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+        box-shadow: none;
     }
 }
 
 .banner h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+    font-size: 2em;
+    color: #222;
 }
 
-.banner p {
-    margin: 0.5rem 0 0;
-    font-size: 1.2rem;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
 }
 
-p {
-    margin-top: 0.5rem;
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: center;
 }
 
-.project {
-    margin-bottom: 2rem;
-}
-
-.private {
-    font-style: italic;
-    color: #b00;
-}
-
-.contact-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    text-decoration: none;
-    color: #0066cc;
-}
-
-.contact-link:hover {
-    text-decoration: underline;
-}
-
-footer {
-    margin-top: 3rem;
-    font-size: 0.95rem;
-    color: #777;
+.cert-badges img {
+    display: block;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    height: auto;
 }

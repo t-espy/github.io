@@ -10,13 +10,12 @@
 
 <body>
     <div class="layout">
-        <main class="content">
+        <div class="main-column">
             <div class="banner">
                 <h1>Stock Price Predictor</h1>
             </div>
             <p><strong>StockPricePredictor</strong> is a complete, GPU-accelerated machine learning workflow designed to
-                build,
-                train, and evaluate stock price prediction models using high-frequency 5‑minute OHLCV data.</p>
+                build, train, and evaluate stock price prediction models using high-frequency 5‑minute OHLCV data.</p>
 
             <p>This project showcases end-to-end capabilities across:</p>
             <ul>
@@ -30,20 +29,17 @@
             <h3>Key Highlights</h3>
             <ul>
                 <li><strong>Ensemble Learning:</strong> Combines <strong>XGBoost</strong> and <strong>LSTM</strong>
-                    predictions
-                    for improved accuracy and robustness.</li>
+                    predictions for improved accuracy and robustness.</li>
                 <li><strong>GPU Optimization:</strong> Utilizes <strong>CuPy</strong>, <strong>XGBoost (GPU
-                        backend)</strong>,
-                    and <strong>TensorFlow</strong> with memory growth settings for efficient GPU use.</li>
+                        backend)</strong>, and <strong>TensorFlow</strong> with memory growth settings for efficient GPU
+                    use.</li>
                 <li><strong>Command-Line Tooling:</strong> Launch training with a single command:
                     <pre><code>python -m src.models.train_model</code></pre>
                 </li>
                 <li><strong>Backtesting Integration:</strong> Employs <strong>vectorbt</strong> for signal-based
-                    strategy
-                    analysis using GPU outputs.</li>
+                    strategy analysis using GPU outputs.</li>
                 <li><strong>Modular Design:</strong> Lazily loads TensorFlow through a helper module to minimize
-                    unnecessary
-                    overhead.</li>
+                    unnecessary overhead.</li>
                 <li><strong>Transparent Logging:</strong> Logs key training metadata, GPU usage, and ensemble
                     diagnostics.</li>
             </ul>
@@ -56,8 +52,6 @@
                 <li>Backtesting with <strong>vectorbt</strong></li>
                 <li>Automated training pipelines and CLI tools</li>
             </ul>
-
-            <!-- ... existing project details ... -->
 
             <section id="report">
                 <h2>Training Time Report</h2>
@@ -114,66 +108,22 @@
                 </table>
 
                 <h3>Interactive Chart</h3>
-                <script type="text/javascript">window.PlotlyConfig = { MathJaxConfig: 'local' };</script>
-                <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-                <div id="training-time-chart" style="height:100%; width:100%;"></div>
-                <script>
-                    if (document.getElementById("training-time-chart")) {
-                        Plotly.newPlot("training-time-chart", [
-                            {
-                                name: "Feature Selection",
-                                x: ["Ensemble (GPU)", "LSTM-only (GPU)", "XGBoost (GPU)"],
-                                y: [5.925, 5.83075, 5.7759],
-                                type: "bar",
-                                marker: { color: "rgb(102,194,165)" },
-                                hovertemplate: "Feature Selection: %{y:.2f} s<br>Model+Device: %{x}<extra></extra>"
-                            },
-                            {
-                                name: "Training",
-                                x: ["Ensemble (GPU)", "LSTM-only (GPU)", "XGBoost (GPU)"],
-                                y: [255.0801, 200.41175, 0.1998],
-                                type: "bar",
-                                marker: { color: "rgb(252,141,98)" },
-                                hovertemplate: "Training: %{y:.2f} s<br>Model+Device: %{x}<extra></extra>"
-                            },
-                            {
-                                name: "Optimization",
-                                x: ["Ensemble (GPU)", "LSTM-only (GPU)", "XGBoost (GPU)"],
-                                y: [0.0, 0.0, 12.8526],
-                                type: "bar",
-                                marker: { color: "rgb(141,160,203)" },
-                                hovertemplate: "Optimization: %{y:.2f} s<br>Model+Device: %{x}<extra></extra>"
-                            }
-                        ], {
-                            barmode: "stack",
-                            title: "Total Time Breakdown by Model Type and Device",
-                            xaxis: { title: "Model Type + Device" },
-                            yaxis: { title: "Time (seconds)" },
-                            legend: { title: { text: "Stage" } },
-                            hovermode: "x unified",
-                            template: "plotly_white"
-                        }, { responsive: true });
-                    }
-                </script>
+                <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+                <div id="training-time-chart"></div>
+                <script src="scripts.js"></script>
             </section>
-            <p>
-                <strong>Repository (Private):</strong>
-                <a href="https://github.com/t-espy/StockPricePredictor" target="_blank">
-                    github.com/t-espy/StockPricePredictor
-                </a>
-                <br>
-                <a href="https://www.linkedin.com/in/toddespy/" target="_blank">Message me on LinkedIn for
-                    access.</a>
+
+            <p><strong>Repository (Private):</strong> <a href="https://github.com/t-espy/StockPricePredictor"
+                    target="_blank">github.com/t-espy/StockPricePredictor</a><br>
+                <a href="https://www.linkedin.com/in/toddespy/" target="_blank">Message me on LinkedIn for access.</a>
             </p>
 
             <footer>
                 <p><a href="index.html">← Back to main portfolio</a></p>
             </footer>
-        </main>
+        </div>
 
-        <!--<div class="sidebar" id="sidebar-container"></div>-->
-
-        <aside class="sidebar" id="contact">
+        <div class="sidebar">
             <h2>Contact</h2>
             <p>Feel free to reach out:</p>
             <ul style="list-style: none; padding-left: 0;">
@@ -191,12 +141,8 @@
                 <img src="images/aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner"
                     width="160" />
             </div>
-        </aside>
-
+        </div>
     </div>
-
-    <script src="scripts.js"></script>
-
 </body>
 
 </html>
