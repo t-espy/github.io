@@ -1,9 +1,27 @@
 body {
-    margin: 0;
-    font-family: sans-serif;
-    line-height: 1.6;
-    background-color: #fff;
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 2rem auto;
+    max-width: 1100px;
+    padding: 0 1rem;
     color: #333;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    color: #1a1a1a;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+h2 {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.25rem;
 }
 
 .layout {
@@ -50,10 +68,51 @@ body {
     }
 }
 
-.banner h1 {
-    margin-top: 0;
-    font-size: 2em;
-    color: #222;
+.banner {
+    background: url('./images/GitHubIOBanner.png') no-repeat center center;
+    background-size: cover;
+    padding: 4rem 1rem;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInSlideUp 1s ease-out both;
+}
+
+.banner p {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+}
+
+p {
+    margin-top: 0.5rem;
+}
+
+.project {
+    margin-bottom: 2rem;
+}
+
+.private {
+    font-style: italic;
+    color: #b00;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    color: #777;
 }
 
 table {
