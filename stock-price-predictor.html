@@ -59,6 +59,103 @@
 
             <!-- ... existing project details ... -->
 
+            <section id="report">
+                <h2>Training Time Report</h2>
+                <h3>Summary Table</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Symbol</th>
+                            <th>Features</th>
+                            <th>Model</th>
+                            <th>Device</th>
+                            <th>Feature Sel. (s)</th>
+                            <th>Training (s)</th>
+                            <th>Opt. (s)</th>
+                            <th>Total (s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>TQQQ</td>
+                            <td>30</td>
+                            <td>Ensemble</td>
+                            <td>GPU</td>
+                            <td>5.92</td>
+                            <td>255.08</td>
+                            <td>0.00</td>
+                            <td>261.01</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>TQQQ</td>
+                            <td>30</td>
+                            <td>LSTM-only</td>
+                            <td>GPU</td>
+                            <td>5.83</td>
+                            <td>200.41</td>
+                            <td>0.00</td>
+                            <td>206.24</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>TQQQ</td>
+                            <td>30</td>
+                            <td>XGBoost</td>
+                            <td>GPU</td>
+                            <td>5.78</td>
+                            <td>0.20</td>
+                            <td>12.85</td>
+                            <td>18.83</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Interactive Chart</h3>
+                <script type="text/javascript">window.PlotlyConfig = { MathJaxConfig: 'local' };</script>
+                <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+                <div id="training-time-chart" style="height:100%; width:100%;"></div>
+                <script>
+                    if (document.getElementById("training-time-chart")) {
+                        Plotly.newPlot("training-time-chart", [
+                            {
+                                name: "Feature Selection",
+                                x: ["Ensemble (GPU)", "LSTM-only (GPU)", "XGBoost (GPU)"],
+                                y: [5.925, 5.83075, 5.7759],
+                                type: "bar",
+                                marker: { color: "rgb(102,194,165)" },
+                                hovertemplate: "Feature Selection: %{y:.2f} s<br>Model+Device: %{x}<extra></extra>"
+                            },
+                            {
+                                name: "Training",
+                                x: ["Ensemble (GPU)", "LSTM-only (GPU)", "XGBoost (GPU)"],
+                                y: [255.0801, 200.41175, 0.1998],
+                                type: "bar",
+                                marker: { color: "rgb(252,141,98)" },
+                                hovertemplate: "Training: %{y:.2f} s<br>Model+Device: %{x}<extra></extra>"
+                            },
+                            {
+                                name: "Optimization",
+                                x: ["Ensemble (GPU)", "LSTM-only (GPU)", "XGBoost (GPU)"],
+                                y: [0.0, 0.0, 12.8526],
+                                type: "bar",
+                                marker: { color: "rgb(141,160,203)" },
+                                hovertemplate: "Optimization: %{y:.2f} s<br>Model+Device: %{x}<extra></extra>"
+                            }
+                        ], {
+                            barmode: "stack",
+                            title: "Total Time Breakdown by Model Type and Device",
+                            xaxis: { title: "Model Type + Device" },
+                            yaxis: { title: "Time (seconds)" },
+                            legend: { title: { text: "Stage" } },
+                            hovermode: "x unified",
+                            template: "plotly_white"
+                        }, { responsive: true });
+                    }
+                </script>
+            </section>
             <p>
                 <strong>Repository (Private):</strong>
                 <a href="https://github.com/t-espy/StockPricePredictor" target="_blank">
